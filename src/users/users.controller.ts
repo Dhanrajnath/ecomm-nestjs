@@ -1,7 +1,7 @@
-import { Controller, Get, SetMetadata, UseGuards, UseInterceptors } from '@nestjs/common';
+import { Controller, Get, UseGuards, UseInterceptors } from '@nestjs/common';
 import { UsersService } from './users.service';
-import { LoggingInterceptor } from 'src/logging/logging.interceptor';
-import { TimeoutInterceptor } from 'src/timeout/timeout.interceptor';
+import { LoggingInterceptor } from '../logging/logging.interceptor';
+import { TimeoutInterceptor } from '../timeout/timeout.interceptor';
 import { User } from './entities/user.entity';
 import { AuthGuard } from '@nestjs/passport';
 import { GetUser } from './user.decorator';

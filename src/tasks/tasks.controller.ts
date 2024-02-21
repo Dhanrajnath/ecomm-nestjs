@@ -16,10 +16,10 @@ import { GetTasksFilterDto } from './dto/get-tasks-filter.dto';
 import { UpdateTaskStatusDto } from './dto/update-task-status.dto';
 import { Task } from './entities/task.entity';
 import { TasksService } from './tasks.service';
-import { User } from 'src/users/entities/user.entity';
-import { LoggingInterceptor } from 'src/logging/logging.interceptor';
-import { TimeoutInterceptor } from 'src/timeout/timeout.interceptor';
-import { GetUser } from 'src/users/user.decorator';
+import { User } from '../users/entities/user.entity';
+import { LoggingInterceptor } from '../logging/logging.interceptor';
+import { TimeoutInterceptor } from '../timeout/timeout.interceptor';
+import { GetUser } from '../users/user.decorator';
 
 @UseInterceptors(LoggingInterceptor, TimeoutInterceptor)
 @Controller('tasks')

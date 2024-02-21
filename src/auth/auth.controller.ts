@@ -1,9 +1,9 @@
 import { Body, Controller, HttpCode, Post, Req, UseGuards, UseInterceptors, ValidationPipe } from '@nestjs/common';
-import { CreateUserDto } from 'src/users/dto/create-user.dto';
+import { CreateUserDto } from '../users/dto/create-user.dto';
 import { AuthService } from './auth.service';
-import { LoggingInterceptor } from 'src/logging/logging.interceptor';
-import { TimeoutInterceptor } from 'src/timeout/timeout.interceptor';
-import { SignInDto } from 'src/users/dto/sign-in-user.dto';
+import { LoggingInterceptor } from '../logging/logging.interceptor';
+import { TimeoutInterceptor } from '../timeout/timeout.interceptor';
+import { SignInDto } from '../users/dto/sign-in-user.dto';
 // import { AuthGuard } from '@nestjs/passport';
 
 @UseInterceptors(LoggingInterceptor, TimeoutInterceptor)

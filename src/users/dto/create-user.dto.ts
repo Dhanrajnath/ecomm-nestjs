@@ -1,4 +1,4 @@
-import { IsEmail, IsEnum, IsNotEmpty, IsOptional, IsStrongPassword } from "class-validator";
+import { IsEmail, IsNotEmpty, IsStrongPassword } from "class-validator";
 
 export class CreateUserDto {
 

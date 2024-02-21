@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsEmail, IsStrongPassword } from "class-validator";
+import { IsNotEmpty } from "class-validator";
 
 export class SignInDto {
 
