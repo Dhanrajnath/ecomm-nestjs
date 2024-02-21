@@ -8,7 +8,7 @@ import { GetUser } from './user.decorator';
 
 @UseInterceptors(LoggingInterceptor, TimeoutInterceptor)
 @UseGuards(AuthGuard())
-@Controller('users')
+@Controller({ version: '1', path: 'users' })
 export class UsersController {
   constructor(private readonly usersService: UsersService) { }
 
