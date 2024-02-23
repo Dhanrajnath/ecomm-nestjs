@@ -74,6 +74,9 @@ export class TasksService {
     user: User,
   ): Promise<Task> {
     const task = await this.getTaskById(id, user);
+    if (task === null) {
+      throw new NotFoundException(`Task with ID "${id}" not found`);
+    }
 
     task.status = status;
     await this.tasksRepository.save(task);
