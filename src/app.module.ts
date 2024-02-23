@@ -5,9 +5,11 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { TasksModule } from './tasks/tasks.module';
+import { ScheduleModule } from '@nestjs/schedule';
 
 @Module({
   imports: [
+    ScheduleModule.forRoot(),
     ConfigModule.forRoot({
       envFilePath: [`.env.${process.env.STAGE}`],
       isGlobal: true,
@@ -32,6 +34,8 @@ import { TasksModule } from './tasks/tasks.module';
     TasksModule
   ],
   controllers: [],
-  providers: [ConfigService],
+  providers: [
+    ConfigService
+  ],
 })
 export class AppModule { }

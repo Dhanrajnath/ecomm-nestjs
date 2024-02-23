@@ -5,6 +5,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { User } from './entities/user.entity';
 import * as bcrypt from 'bcrypt';
+import { Cron } from '@nestjs/schedule';
 
 @Injectable()
 export class UsersService {
@@ -13,6 +14,11 @@ export class UsersService {
     @InjectRepository(User)
     private usersRepository: Repository<User>
   ) { }
+
+  @Cron('30 * * * * *')
+  handleCron() {
+    console.log('called when the current second is 30');
+  }
 
   async create(createUserDto: CreateUserDto): Promise<void> {
 
